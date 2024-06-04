@@ -8,10 +8,12 @@ import UseRef from './hoooks/UseRef'
 
 import Child from './Child.jsx'
 import Child1 from './Child1.jsx'
-import { useState } from 'react'
+import Child2 from './Child2.jsx'
+import { useState, createContext } from 'react'
 
 function App() {
   const [count, setCount] = useState(0)
+
   const addCount = (msg) => {
     setCount(count + 1)
   }
@@ -29,10 +31,11 @@ function App() {
         <UseRef></UseRef>
       </div>
       <div style={{ margin: '200px 0' }}>
-        <Child onAddCount={addCount} count={count}>
+        {/* <Child onAddCount={addCount} count={count}>
           <span>这是插槽</span>
         </Child>
-        <Child1 count={count}></Child1>
+        <Child1 count={count}></Child1> */}
+        <Child1></Child1>
       </div>
     </div>
   )
