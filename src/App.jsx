@@ -9,13 +9,17 @@ import UseRef from './hoooks/UseRef'
 import Child from './Child.jsx'
 import Child1 from './Child1.jsx'
 import Child2 from './Child2.jsx'
+import UseEffect from './hoooks/UseEffect.jsx'
 import { useState, createContext } from 'react'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const [isShow, setShow] = useState(true)
   const addCount = (msg) => {
     setCount(count + 1)
+  }
+  const handleDestroy = () => {
+    setShow(!isShow)
   }
 
   return (
@@ -29,6 +33,8 @@ function App() {
       <div style={{ marginTop: '200px' }}>
         <UseState></UseState>
         <UseRef></UseRef>
+        <button onClick={handleDestroy}>销毁组件</button>
+        {isShow && <UseEffect></UseEffect>}
       </div>
       <div style={{ margin: '200px 0' }}>
         {/* <Child onAddCount={addCount} count={count}>
