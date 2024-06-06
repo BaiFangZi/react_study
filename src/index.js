@@ -7,12 +7,10 @@ import UseEffect from './hoooks/UseEffect';
 console.log('root');
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-   
-    {/* <UseEffect></UseEffect> */}
-
-    <App />
-  </React.StrictMode>
+  // <React.StrictMode>
+  //   {/* <UseEffect></UseEffect> */}
+  // </React.StrictMode>
+  <App />
 );
 
 

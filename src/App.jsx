@@ -10,6 +10,9 @@ import Child from './Child.jsx'
 import Child1 from './Child1.jsx'
 import Child2 from './Child2.jsx'
 import UseEffect from './hoooks/UseEffect.jsx'
+
+import Request from './Request.jsx'
+
 import { useState, createContext } from 'react'
 
 function App() {
@@ -42,6 +45,7 @@ function App() {
         </Child>
         <Child1 count={count}></Child1> */}
         <Child1></Child1>
+        <Request></Request>
       </div>
     </div>
   )
