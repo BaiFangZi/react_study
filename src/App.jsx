@@ -14,8 +14,9 @@ import UseEffect from './hoooks/UseEffect.jsx'
 import Request from './Request.jsx'
 
 import { useState, createContext } from 'react'
+import Counter from './reducer.jsx'
 
-function App() {
+function App () {
   const [count, setCount] = useState(0)
   const [isShow, setShow] = useState(true)
   const addCount = (msg) => {
@@ -46,6 +47,10 @@ function App() {
         <Child1 count={count}></Child1> */}
         <Child1></Child1>
         <Request></Request>
+      </div>
+      <div style={{ margin: '200px 0' }}>
+
+        <Counter></Counter>
       </div>
     </div>
   )
