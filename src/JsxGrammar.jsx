@@ -9,7 +9,7 @@ const getCount = () => {
 const JsxGrammar = () => {
   // const count = useSelector(state => state.app.count)
   const count1 = useSelector((state) => {
-    console.log(state);
+    // console.log(state);
     return state.app.count
   });
   return (

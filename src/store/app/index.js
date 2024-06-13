@@ -6,13 +6,12 @@ export const appSlice = createSlice({
   initialState: {
     count: 0,
     name: '',
-    obj: {
-      a: 1
-    }
+    user: { id: 1, name: 'John', age: 30 },
   },
   reducers: {
-    setObjA(state, action) {
-      state.obj.a = action.payload
+    setUser(state, action) {
+      console.log('action',action);
+      state.user = action.payload
     },
     setName(state, action) {
       // console.log('action长这样',action);
@@ -34,7 +33,7 @@ export const {
   decrement,
   incrementByAmount,
   setName,
-  setObjA
+  setUser
 } = appSlice.actions;
 
 export default appSlice.reducer;

@@ -1,16 +1,19 @@
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
-import { decrement, increment, setName, setObjA } from './store/app/index';
+import { decrement, increment, setName, setUser } from './store/app/index';
 import { useState } from 'react'
 const Counter = () => {
+  console.log('‘渲染了');
   const count = useSelector((state) => {
-    console.log('select被运行了');
+    // console.log('select被运行了');
     return state.app.count
-  });
+  },shallowEqual);
   const [inputValue, setInputValue] = useState('')
   const name = useSelector(state => {
 
     return state.app.name
-  }, shallowEqual)
+  },shallowEqual)
+  const user = useSelector((state) => state.app.user,shallowEqual);
+
   const dispatch = useDispatch();
   const handleClickInc = () => {
     dispatch(increment())
@@ -23,8 +26,9 @@ const Counter = () => {
 
     dispatch(setName(inputValue))
   }
+
   const handleChangeObjA = () => {
-    dispatch(setObjA(inputValue),shallowEqual)
+    dispatch(setUser( { id: 1, name: 'John', age: 30 },))
   }
   const handleChangeInput = (e) => {
     setInputValue(e.target.value)
@@ -41,7 +45,12 @@ const Counter = () => {
       <input type="text" value={inputValue} onChange={handleChangeInput} />
       <button onClick={handleChangeName}>改变name</button>
       <button onClick={handleChangeObjA}>改变ObjA</button>
-      <div>name：{name}</div>
+      {/* <div>name：{name}</div> */}
+      <div>
+      <p>ID: {user.id}</p>
+      <p>Name: {user.name}</p>
+      <p>Age: {user.age}</p>
+    </div>
     </>
   )
 }
